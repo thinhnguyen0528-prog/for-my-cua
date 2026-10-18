@@ -1,0 +1,2678 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>For My Cua ❤️ — Our Little Universe</title>
+    <meta name="description" content="Một vũ trụ nhỏ với dải ngân hà, hàng nghìn vì sao và trái tim kết tinh từ hạt sáng dành riêng cho Cua." />
+    <meta property="og:title" content="For My Cua ❤️ — Our Little Universe" />
+    <meta property="og:description" content="Một vũ trụ nhỏ với dải ngân hà, hàng nghìn vì sao và trái tim kết tinh từ hạt sáng dành riêng cho Cua." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#03040c" />
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono (Full Vietnamese Support) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --space-black: #03040c;
+        --navy-deep: #070b1c;
+        --nebula-violet: #160a2c;
+        --glass-bg: rgba(15, 23, 42, 0.75);
+        --card-navy-bg: rgba(9, 14, 30, 0.84);
+        --glass-border: rgba(255, 255, 255, 0.12);
+        --glass-border-soft-pink: rgba(244, 168, 212, 0.22);
+        --pink-core: #ff3388;
+        --pink-rose: #ff66ad;
+        --pink-blush: #ffa6d2;
+        --pink-pastel: #ffd9ec;
+        --lavender-soft: #c4b5fd;
+        --text-primary: #fdf4f8;
+        --text-secondary: rgba(248, 235, 243, 0.9);
+        --text-muted: rgba(235, 195, 218, 0.68);
+        --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: 'JetBrains Mono', monospace;
+        --hud-height: 64px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      html,
+      body {
+        width: 100%;
+        min-height: 100%;
+        min-height: 100dvh;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        background-color: var(--space-black);
+        background-image:
+          radial-gradient(circle at 22% 20%, rgba(76, 29, 149, 0.16) 0%, transparent 48%),
+          radial-gradient(circle at 78% 26%, rgba(30, 58, 138, 0.16) 0%, transparent 52%),
+          radial-gradient(circle at 50% 48%, rgba(190, 24, 93, 0.1) 0%, transparent 58%),
+          linear-gradient(170deg, #03040c 0%, #070b1c 52%, #03030a 100%);
+        color: var(--text-primary);
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Fullscreen Interactive Living Galaxy & Pink Particle Heart Canvas */
+      #heart-canvas {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        z-index: 1;
+        cursor: pointer;
+        touch-action: manipulation;
+      }
+
+      /* Subtle Atmospheric Vignette */
+      .vignette-layer {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 2;
+        background: radial-gradient(
+          circle at 50% 45%,
+          rgba(255, 51, 136, 0.02) 0%,
+          rgba(9, 14, 30, 0.16) 60%,
+          rgba(3, 4, 12, 0.68) 100%
+        );
+      }
+
+      /* ==========================================================================
+         TOP HUD BAR (COMPACT, SAFE FROM OVERLAPPING THE HEART)
+         ========================================================================== */
+      .hud-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--hud-height);
+        z-index: 30;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 clamp(0.9rem, 3.2vw, 2rem);
+        pointer-events: none;
+      }
+
+      .brand-badge,
+      .audio-btn {
+        pointer-events: auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.44rem 0.88rem;
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--glass-border);
+        border-radius: 999px;
+        color: var(--text-primary);
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        box-shadow: 0 6px 22px rgba(2, 4, 16, 0.42);
+        transition:
+          transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+          border-color 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .brand-badge .pulse-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--pink-rose);
+        box-shadow: 0 0 10px var(--pink-core);
+        animation: dotPulse 2.4s ease-in-out infinite;
+      }
+
+      .audio-btn {
+        cursor: pointer;
+        outline: none;
+      }
+
+      .audio-btn:hover {
+        border-color: rgba(255, 166, 210, 0.38);
+        transform: translateY(-1px);
+        box-shadow: 0 8px 24px rgba(255, 51, 136, 0.18);
+      }
+
+      .audio-btn:active {
+        transform: translateY(0) scale(0.97);
+      }
+
+      .audio-btn[aria-pressed='true'] {
+        border-color: rgba(255, 130, 190, 0.48);
+        background: rgba(28, 16, 46, 0.8);
+      }
+
+      .audio-bars {
+        display: inline-flex;
+        align-items: flex-end;
+        gap: 2px;
+        height: 11px;
+      }
+
+      .audio-bars span {
+        display: block;
+        width: 2px;
+        height: 4px;
+        background: var(--pink-blush);
+        border-radius: 2px;
+        transition: height 0.2s ease;
+      }
+
+      .audio-btn[aria-pressed='true'] .audio-bars span:nth-child(1) {
+        animation: soundWave 0.9s ease-in-out infinite;
+      }
+      .audio-btn[aria-pressed='true'] .audio-bars span:nth-child(2) {
+        animation: soundWave 0.9s ease-in-out 0.22s infinite;
+      }
+      .audio-btn[aria-pressed='true'] .audio-bars span:nth-child(3) {
+        animation: soundWave 0.9s ease-in-out 0.42s infinite;
+      }
+
+      /* ==========================================================================
+         COSMIC PASSWORD GATE OVERLAY (STAGE 0)
+         ========================================================================== */
+      .password-gate-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 25;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: calc(var(--hud-height) + 0.5rem) clamp(1rem, 4vw, 2rem) 1.5rem;
+        overflow-y: auto;
+        background: radial-gradient(
+          circle at 50% 45%,
+          rgba(11, 16, 36, 0.28) 0%,
+          rgba(3, 4, 12, 0.65) 100%
+        );
+        opacity: 1;
+        visibility: visible;
+        transition:
+          opacity 1.05s cubic-bezier(0.22, 1, 0.36, 1),
+          visibility 1.05s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 1.05s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .password-gate-overlay.is-unlocking {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: scale(1.04);
+      }
+
+      .password-gate-overlay.is-hidden {
+        display: none !important;
+        pointer-events: none !important;
+      }
+
+      .password-gate-card {
+        position: relative;
+        width: 100%;
+        max-width: 428px;
+        margin: auto;
+        padding: clamp(1.5rem, 4.5vw, 2.25rem) clamp(1.25rem, 4vw, 2.1rem);
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--glass-border);
+        border-radius: 24px;
+        box-shadow:
+          0 24px 60px rgba(2, 4, 16, 0.78),
+          0 0 36px rgba(255, 64, 150, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        text-align: center;
+        overflow: hidden;
+        transition:
+          border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .password-gate-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 16%;
+        right: 16%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(255, 182, 222, 0.55) 50%,
+          transparent 100%
+        );
+        pointer-events: none;
+      }
+
+      .password-gate-card.is-glow-success {
+        border-color: rgba(255, 166, 210, 0.65);
+        box-shadow:
+          0 0 56px rgba(255, 77, 166, 0.42),
+          0 0 96px rgba(192, 132, 252, 0.26),
+          inset 0 0 24px rgba(255, 166, 210, 0.18);
+        transform: translateY(-3px) scale(1.015);
+      }
+
+      .password-gate-card.is-error-shake {
+        border-color: rgba(255, 92, 145, 0.62);
+        box-shadow:
+          0 20px 52px rgba(2, 4, 16, 0.8),
+          0 0 30px rgba(255, 56, 120, 0.25);
+        animation: cosmicGateShake 0.48s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+      }
+
+      .gate-heart-emblem {
+        position: relative;
+        width: 52px;
+        height: 52px;
+        margin: 0 auto 0.95rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 92, 168, 0.2) 0%,
+          rgba(15, 23, 42, 0.55) 72%
+        );
+        border: 1px solid rgba(255, 166, 210, 0.28);
+        box-shadow: 0 0 22px rgba(255, 51, 136, 0.3);
+        animation: emblemFloatPulse 3.4s ease-in-out infinite;
+      }
+
+      .gate-heart-svg {
+        width: 24px;
+        height: 24px;
+        fill: url(#gateHeartGradient);
+        filter: drop-shadow(0 0 8px rgba(255, 77, 166, 0.75));
+      }
+
+      .gate-kicker {
+        font-family: var(--font-mono);
+        font-size: 0.66rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--pink-blush);
+        margin-bottom: 0.55rem;
+        opacity: 0.9;
+      }
+
+      .gate-title {
+        font-size: clamp(1.26rem, 4.2vw, 1.58rem);
+        font-weight: 700;
+        line-height: 1.32;
+        letter-spacing: -0.015em;
+        margin-bottom: 0.48rem;
+        background: linear-gradient(135deg, #ffffff 0%, #ffd9ec 58%, #ff85bd 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .gate-description {
+        font-size: clamp(0.88rem, 2.6vw, 0.95rem);
+        font-weight: 400;
+        line-height: 1.6;
+        color: var(--text-secondary);
+        margin-bottom: 1.3rem;
+      }
+
+      .gate-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.78rem;
+        text-align: left;
+      }
+
+      .gate-label {
+        display: block;
+        font-family: var(--font-mono);
+        font-size: 0.71rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--pink-pastel);
+        margin-left: 0.15rem;
+      }
+
+      .gate-input-wrapper {
+        position: relative;
+        width: 100%;
+      }
+
+      .gate-input {
+        width: 100%;
+        padding: 0.88rem 1.05rem;
+        font-family: var(--font-sans);
+        font-size: 0.98rem;
+        font-weight: 500;
+        color: #ffffff;
+        background: rgba(8, 12, 26, 0.82);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 13px;
+        outline: none;
+        user-select: text;
+        -webkit-user-select: text;
+        transition:
+          border-color 0.25s ease,
+          box-shadow 0.25s ease,
+          background 0.25s ease;
+      }
+
+      .gate-input::placeholder {
+        color: rgba(235, 195, 218, 0.42);
+        font-weight: 400;
+      }
+
+      .gate-input:focus {
+        background: rgba(12, 18, 38, 0.94);
+        border-color: rgba(255, 148, 198, 0.6);
+        box-shadow: 0 0 18px rgba(255, 51, 136, 0.2);
+      }
+
+      .gate-input.is-invalid {
+        border-color: rgba(255, 92, 145, 0.8);
+        box-shadow: 0 0 14px rgba(255, 51, 136, 0.28);
+      }
+
+      .gate-hint-box {
+        margin-top: 0.05rem;
+        padding: 0.62rem 0.85rem;
+        border-radius: 11px;
+        background: rgba(255, 92, 168, 0.06);
+        border: 1px dashed rgba(255, 166, 210, 0.24);
+        font-size: 0.8rem;
+        line-height: 1.5;
+        color: var(--pink-pastel);
+        text-align: center;
+      }
+
+      .gate-hint-highlight {
+        font-family: var(--font-mono);
+        font-weight: 500;
+        color: #ff8cc2;
+      }
+
+      .gate-error-message {
+        min-height: 1.25rem;
+        font-size: 0.81rem;
+        line-height: 1.45;
+        color: #ffa6d2;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(-3px);
+        transition:
+          opacity 0.28s ease,
+          transform 0.28s ease;
+      }
+
+      .gate-error-message.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .gate-submit-btn {
+        margin-top: 0.1rem;
+        width: 100%;
+        padding: 0.92rem 1.2rem;
+        border-radius: 13px;
+        border: 1px solid rgba(255, 182, 222, 0.36);
+        background: linear-gradient(
+          135deg,
+          rgba(244, 42, 130, 0.86) 0%,
+          rgba(210, 38, 118, 0.88) 52%,
+          rgba(139, 52, 222, 0.82) 100%
+        );
+        color: #ffffff;
+        font-family: var(--font-sans);
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        cursor: pointer;
+        box-shadow:
+          0 10px 26px rgba(244, 42, 130, 0.26),
+          inset 0 1px 0 rgba(255, 255, 255, 0.24);
+        transition:
+          transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+          filter 0.25s ease;
+      }
+
+      .gate-submit-btn:hover {
+        transform: translateY(-1px);
+        box-shadow:
+          0 14px 32px rgba(244, 42, 130, 0.38),
+          inset 0 1px 0 rgba(255, 255, 255, 0.32);
+        filter: brightness(1.05);
+      }
+
+      .gate-submit-btn:active {
+        transform: translateY(0) scale(0.985);
+      }
+
+      /* ==========================================================================
+         STAGE 3 — DEDICATION & INVITATION PROMPT ("Cua ơi, chạm vào trái tim nhé ✨")
+         ========================================================================== */
+      .stage-prompt-wrap {
+        position: fixed;
+        left: 50%;
+        bottom: clamp(1.4rem, 5.5vh, 3.4rem);
+        transform: translateX(-50%) translateY(16px);
+        z-index: 12;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.55rem;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+        width: 90%;
+        max-width: 400px;
+        text-align: center;
+      }
+
+      .stage-prompt-wrap.is-visible {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        pointer-events: auto;
+      }
+
+      .stage-prompt-wrap.is-hidden {
+        opacity: 0;
+        transform: translateX(-50%) translateY(12px);
+        pointer-events: none;
+      }
+
+      .for-cua-subtitle {
+        font-family: var(--font-mono);
+        font-size: clamp(0.7rem, 2vw, 0.78rem);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--pink-pastel);
+        text-shadow: 0 0 14px rgba(255, 92, 168, 0.45);
+      }
+
+      .touch-heart-btn {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        padding: 0.82rem 1.5rem;
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(244, 168, 212, 0.3);
+        border-radius: 999px;
+        color: var(--text-primary);
+        font-family: var(--font-sans);
+        font-size: clamp(0.88rem, 2.5vw, 0.98rem);
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        box-shadow:
+          0 10px 30px rgba(3, 4, 12, 0.68),
+          0 0 22px rgba(255, 51, 136, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.14);
+        animation: gentleFloat 3.6s ease-in-out infinite;
+        transition:
+          border-color 0.28s ease,
+          box-shadow 0.28s ease,
+          transform 0.28s ease;
+      }
+
+      .touch-heart-btn:hover {
+        border-color: rgba(244, 168, 212, 0.58);
+        box-shadow:
+          0 12px 34px rgba(3, 4, 12, 0.76),
+          0 0 28px rgba(255, 51, 136, 0.32),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      }
+
+      .touch-heart-btn:active {
+        transform: scale(0.96);
+      }
+
+      /* ==========================================================================
+         STAGE 4 — REDESIGNED LOVE LETTER CARD ("Gửi Cua của anh 💗")
+         - Near-black translucent navy background for optimal text legibility
+         - Delicate 1px soft rose-violet border, refined shadow
+         - Zero right-edge colored bar or scrollbar artifacts
+         - Dedicated responsive layout for Mobile vs Desktop with clear separation
+         ========================================================================== */
+      .love-card-container {
+        position: fixed;
+        z-index: 15;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+          visibility 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      @media (max-width: 767px) {
+        .love-card-container {
+          left: clamp(0.75rem, 3.5vw, 1.25rem);
+          right: clamp(0.75rem, 3.5vw, 1.25rem);
+          bottom: clamp(0.75rem, 2.2vh, 1.25rem);
+          top: auto;
+          max-height: calc(52dvh - 0.5rem);
+          display: flex;
+          flex-direction: column;
+          transform: translateY(22px) scale(0.985);
+        }
+
+        .love-card-container.is-open {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @media (max-width: 767px) and (max-height: 700px) {
+        .love-card-container {
+          max-height: 49dvh;
+          bottom: 0.6rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .love-card-container {
+          top: 50%;
+          right: clamp(2rem, 5.5vw, 6rem);
+          width: clamp(380px, 39vw, 468px);
+          max-height: calc(100dvh - 140px);
+          display: flex;
+          flex-direction: column;
+          transform: translateY(-47%) translateX(20px) scale(0.985);
+        }
+
+        .love-card-container.is-open {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+          transform: translateY(-50%) translateX(0) scale(1);
+        }
+      }
+
+      .love-card {
+        position: relative;
+        width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        padding: clamp(1.25rem, 3.5vw, 2rem) clamp(1.2rem, 3.5vw, 2rem);
+        background: var(--card-navy-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--glass-border-soft-pink);
+        border-radius: 22px;
+        box-shadow:
+          0 20px 50px rgba(2, 4, 14, 0.72),
+          0 0 28px rgba(255, 77, 166, 0.08),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .love-card::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+      }
+
+      .love-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 18%;
+        right: 18%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(255, 190, 226, 0.42) 50%,
+          transparent 100%
+        );
+        pointer-events: none;
+      }
+
+      .card-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.85rem;
+        margin-bottom: 0.95rem;
+      }
+
+      .card-kicker {
+        font-family: var(--font-mono);
+        font-size: 0.66rem;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(255, 186, 222, 0.82);
+        margin-bottom: 0.35rem;
+      }
+
+      .card-title {
+        font-size: clamp(1.2rem, 3.2vw, 1.48rem);
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: -0.015em;
+        color: #ffffff;
+        background: linear-gradient(135deg, #ffffff 0%, #ffe4f1 62%, #ff9ec9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .close-card-btn {
+        cursor: pointer;
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.04);
+        color: rgba(252, 231, 243, 0.78);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        transition:
+          background 0.25s ease,
+          border-color 0.25s ease,
+          color 0.25s ease,
+          transform 0.25s ease;
+      }
+
+      .close-card-btn:hover {
+        background: rgba(255, 92, 168, 0.16);
+        border-color: rgba(255, 148, 198, 0.4);
+        color: #ffffff;
+        transform: rotate(90deg);
+      }
+
+      .card-divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          rgba(244, 168, 212, 0.24) 0%,
+          rgba(255, 255, 255, 0.05) 100%
+        );
+        margin-bottom: 1.05rem;
+      }
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.95rem;
+        font-size: clamp(0.92rem, 2.4vw, 0.99rem);
+        line-height: 1.74;
+        color: var(--text-secondary);
+        font-weight: 400;
+      }
+
+      .card-body p {
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+          opacity 0.68s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.68s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .love-card-container.is-open .card-body p:nth-child(1) {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.14s;
+      }
+
+      .love-card-container.is-open .card-body p:nth-child(2) {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.32s;
+      }
+
+      .love-card-container.is-open .card-body p:nth-child(3) {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.5s;
+      }
+
+      .love-card-container.is-open .card-body p:nth-child(4) {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.68s;
+      }
+
+      .card-body strong {
+        color: #ffffff;
+        font-weight: 600;
+      }
+
+      .card-highlight {
+        margin-top: 0.15rem;
+        padding: 0.85rem 1.05rem;
+        border-radius: 14px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 64, 150, 0.11) 0%,
+          rgba(168, 85, 247, 0.08) 100%
+        );
+        border: 1px solid rgba(244, 168, 212, 0.24);
+        color: #fff8fc;
+        font-weight: 500;
+        line-height: 1.68;
+      }
+
+      .card-footer {
+        margin-top: 1.25rem;
+        padding-top: 0.95rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        opacity: 0;
+        transform: translateY(8px);
+        transition:
+          opacity 0.68s cubic-bezier(0.22, 1, 0.36, 1) 0.86s,
+          transform 0.68s cubic-bezier(0.22, 1, 0.36, 1) 0.86s;
+      }
+
+      .love-card-container.is-open .card-footer {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .signature-block {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+      }
+
+      .signature-label {
+        font-family: var(--font-mono);
+        font-size: 0.63rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+      }
+
+      .signature {
+        font-family: var(--font-sans);
+        font-size: 0.84rem;
+        font-weight: 600;
+        color: var(--pink-pastel);
+        letter-spacing: 0.02em;
+      }
+
+      .sparkle-action-btn {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.42rem;
+        padding: 0.48rem 0.92rem;
+        border-radius: 999px;
+        border: 1px solid rgba(244, 168, 212, 0.32);
+        background: rgba(255, 51, 136, 0.13);
+        color: #ffffff;
+        font-family: var(--font-sans);
+        font-size: 0.78rem;
+        font-weight: 500;
+        transition:
+          background 0.25s ease,
+          border-color 0.25s ease,
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .sparkle-action-btn:hover {
+        background: rgba(255, 51, 136, 0.24);
+        border-color: rgba(244, 168, 212, 0.55);
+        box-shadow: 0 0 18px rgba(255, 51, 136, 0.28);
+      }
+
+      .sparkle-action-btn:active {
+        transform: scale(0.96);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.2s !important;
+        }
+      }
+
+      @keyframes dotPulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.82;
+        }
+        50% {
+          transform: scale(1.3);
+          opacity: 1;
+        }
+      }
+
+      @keyframes soundWave {
+        0%,
+        100% {
+          height: 4px;
+        }
+        50% {
+          height: 11px;
+        }
+      }
+
+      @keyframes gentleFloat {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-4px);
+        }
+      }
+
+      @keyframes emblemFloatPulse {
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-3px) scale(1.04);
+        }
+      }
+
+      @keyframes cosmicGateShake {
+        10%,
+        90% {
+          transform: translate3d(-3px, 0, 0);
+        }
+        20%,
+        80% {
+          transform: translate3d(5px, 0, 0);
+        }
+        30%,
+        50%,
+        70% {
+          transform: translate3d(-6px, 0, 0);
+        }
+        40%,
+        60% {
+          transform: translate3d(6px, 0, 0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Fullscreen Interactive Living Galaxy & Pink Particle Heart Canvas -->
+    <canvas id="heart-canvas" aria-label="Vũ trụ ngân hà và trái tim hạt sáng dành riêng cho Cua"></canvas>
+
+    <!-- Soft Cosmic Vignette Overlay -->
+    <div class="vignette-layer" aria-hidden="true"></div>
+
+    <!-- Top Glassmorphic Navigation / Audio Bar -->
+    <header class="hud-bar">
+      <div class="brand-badge">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span>FOR MY CUA ❤️</span>
+      </div>
+
+      <button
+        id="audio-toggle-btn"
+        class="audio-btn"
+        type="button"
+        aria-pressed="false"
+        aria-label="Bật hoặc tắt nhạc nền lãng mạn"
+      >
+        <span class="audio-bars" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span id="audio-label">Nhạc Piano: Tắt</span>
+      </button>
+    </header>
+
+    <!-- STAGE 0: Cosmic Password Gate Overlay -->
+    <section
+      id="password-gate-overlay"
+      class="password-gate-overlay"
+      aria-labelledby="gate-title"
+      aria-modal="true"
+      role="dialog"
+    >
+      <div id="password-gate-card" class="password-gate-card">
+        <div class="gate-heart-emblem" aria-hidden="true">
+          <svg class="gate-heart-svg" viewBox="0 0 24 24">
+            <defs>
+              <linearGradient id="gateHeartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffd9ec" />
+                <stop offset="50%" stop-color="#ff66ad" />
+                <stop offset="100%" stop-color="#ff3388" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+            />
+          </svg>
+        </div>
+
+        <p class="gate-kicker">A LITTLE UNIVERSE, JUST FOR YOU</p>
+        <h1 id="gate-title" class="gate-title">Cua ơi, em đã sẵn sàng chưa? 💗</h1>
+        <p class="gate-description">Có một điều anh giấu em trong vũ trụ nhỏ này...</p>
+
+        <form id="password-gate-form" class="gate-form" novalidate>
+          <label for="secret-password-input" class="gate-label">Nhập mật mã bí mật</label>
+          <div class="gate-input-wrapper">
+            <input
+              id="secret-password-input"
+              class="gate-input"
+              type="text"
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+              placeholder="Nhập mật mã của em..."
+              aria-describedby="gate-hint-text gate-error-text"
+            />
+          </div>
+
+          <p id="gate-hint-text" class="gate-hint-box">
+            vui lòng nhập <span class="gate-hint-highlight">anhyeuem</span> để có thể chạm tới trái tym anh ấy
+          </p>
+
+          <p id="gate-error-text" class="gate-error-message" role="alert" aria-live="polite"></p>
+
+          <button id="gate-submit-btn" class="gate-submit-btn" type="submit">
+            CHẠM TỚI TRÁI TIM ANH ❤️
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Stage 3 Dedication & Interactive Invitation -->
+    <div id="stage-prompt" class="stage-prompt-wrap" aria-live="polite">
+      <p class="for-cua-subtitle">Dành riêng cho Cua ♡</p>
+      <button id="open-heart-btn" class="touch-heart-btn" type="button">
+        <span>Cua ơi, chạm vào trái tim nhé ✨</span>
+      </button>
+    </div>
+
+    <!-- Stage 4 Redesigned Romantic Glassmorphism Love Letter -->
+    <section
+      id="love-card-modal"
+      class="love-card-container"
+      aria-labelledby="love-card-title"
+      aria-hidden="true"
+    >
+      <article class="love-card">
+        <div class="card-header">
+          <div>
+            <p class="card-kicker">FOR MY CUA · OUR LITTLE UNIVERSE</p>
+            <h1 id="love-card-title" class="card-title">Gửi Cua của anh 💗</h1>
+          </div>
+          <button
+            id="close-card-btn"
+            class="close-card-btn"
+            type="button"
+            aria-label="Đóng tấm thiệp"
+          >
+            ✕
+          </button>
+        </div>
+
+        <div class="card-divider" aria-hidden="true"></div>
+
+        <div class="card-body">
+          <p>
+            Giữa cả vũ trụ rộng lớn này, anh vẫn thấy điều dịu dàng và đẹp đẽ nhất là có
+            <strong>Cua</strong> ở bên.
+          </p>
+          <p>
+            Mỗi hạt sáng nhỏ trên màn hình này đều giống như những điều thương yêu anh muốn gửi
+            đến em — lặng lẽ gom lại để tạo thành một trái tim chỉ dành riêng cho Cua.
+          </p>
+          <p>
+            Cảm ơn em vì đã xuất hiện, làm những ngày bình thường của anh trở nên ấm áp, dễ thương
+            và có ý nghĩa hơn rất nhiều.
+          </p>
+          <p class="card-highlight">
+            Chúc Cua của anh luôn vui vẻ, luôn mỉm cười thật xinh, và luôn nhớ rằng có một người
+            thương em rất nhiều. ❤️
+          </p>
+        </div>
+
+        <div class="card-footer">
+          <div class="signature-block">
+            <span class="signature-label">WITH ALL MY HEART</span>
+            <span class="signature">Mãi thương Cua · Forever &amp; Always ♡</span>
+          </div>
+          <button id="burst-love-btn" class="sparkle-action-btn" type="button">
+            <span>Gửi thêm ngàn vì sao ✨</span>
+          </button>
+        </div>
+      </article>
+    </section>
+
+    <script>
+      /**
+       * FOR MY CUA: OUR LITTLE UNIVERSE & COSMIC PASSWORD GATE 🌌❤️
+       * Senior UI/UX & Creative Frontend Architecture:
+       * 1. GalaxyNebulaSystem (Deep Navy-Black Space, Violet/Blush Nebula, Slow Curving Milky Way)
+       * 2. StarfieldSystem (3-Layer Depth Stars, Unlock Convergence, Subtle Desktop Parallax)
+       * 3. ShootingStarSystem (Occasional Fine Meteors with Tapered Trails)
+       * 4. ParticleHeartSystem (Viewport-Safe Parametric 3D Pink Particle Heart + Separation Physics)
+       * 5. CosmicPasswordGate & LoveLetterSystem (Secret Code 'emyeuanh', Refined Navy Card, Piano)
+       */
+
+      (function () {
+        if (window.__FOR_MY_CUA_INITIALIZED__) return;
+        window.__FOR_MY_CUA_INITIALIZED__ = true;
+
+        // ============================================================================
+        // 1. MATH & INTERPOLATION UTILITIES (REQUIRED: deltaTime, lerp, easeInOutCubic)
+        // ============================================================================
+        const TAU = Math.PI * 2;
+
+        function lerp(start, end, amt) {
+          return start + (end - start) * amt;
+        }
+
+        function easeInOutCubic(t) {
+          return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        }
+
+        function clamp(val, min, max) {
+          return Math.max(min, Math.min(max, val));
+        }
+
+        function randomRange(min, max) {
+          return min + Math.random() * (max - min);
+        }
+
+        function evaluateHeartPoint(t) {
+          const sinT = Math.sin(t);
+          const cosT = Math.cos(t);
+          const x = 16 * sinT * sinT * sinT;
+          const y = -(
+            13 * cosT -
+            5 * Math.cos(2 * t) -
+            2 * Math.cos(3 * t) -
+            Math.cos(4 * t)
+          );
+          return { x, y };
+        }
+
+        // ============================================================================
+        // 2. CRISP PINPOINT SPRITE CACHE (PREVENTS OVEREXPOSURE / SOLID BLOB)
+        // ============================================================================
+        const PALETTE = [
+          { r: 255, g: 48, b: 132 }, // Deep Rose Pink
+          { r: 255, g: 102, b: 176 }, // Luminous Romance Pink
+          { r: 255, g: 158, b: 208 }, // Soft Blush Pink
+          { r: 255, g: 224, b: 240 }, // Warm Starlight Pink-White
+          { r: 196, g: 148, b: 255 }, // Soft Cosmic Lavender
+          { r: 176, g: 196, b: 255 }, // Distant Starlight Silver-Blue
+        ];
+
+        const spriteCache = PALETTE.map((c) => {
+          const size = 64;
+          const half = size / 2;
+          const offscreen = document.createElement('canvas');
+          offscreen.width = size;
+          offscreen.height = size;
+          const octx = offscreen.getContext('2d');
+
+          const grad = octx.createRadialGradient(half, half, 0, half, half, half);
+          grad.addColorStop(0, 'rgba(255, 255, 255, 0.96)');
+          grad.addColorStop(0.12, `rgba(${c.r}, ${c.g}, ${c.b}, 0.82)`);
+          grad.addColorStop(0.32, `rgba(${c.r}, ${c.g}, ${c.b}, 0.24)`);
+          grad.addColorStop(0.64, `rgba(${c.r}, ${c.g}, ${c.b}, 0.05)`);
+          grad.addColorStop(1, `rgba(${c.r}, ${c.g}, ${c.b}, 0)`);
+
+          octx.fillStyle = grad;
+          octx.beginPath();
+          octx.arc(half, half, half, 0, TAU);
+          octx.fill();
+          return offscreen;
+        });
+
+        // ============================================================================
+        // 3. WEB AUDIO API — ROMANTIC PIANO SYNTHESIZER (USER-TRIGGERED ONLY)
+        // ============================================================================
+        class RomanticPianoEngine {
+          constructor() {
+            this.ctx = null;
+            this.isPlaying = false;
+            this.stepIndex = 0;
+            this.timerId = null;
+            this.sequence = [
+              { bass: 174.61, notes: [261.63, 329.63, 349.23, 440.0, 523.25] },
+              { bass: 164.81, notes: [246.94, 293.66, 329.63, 392.0, 493.88] },
+              { bass: 146.83, notes: [220.0, 261.63, 293.66, 349.23, 440.0] },
+              { bass: 130.81, notes: [196.0, 261.63, 329.63, 392.0, 493.88] },
+            ];
+          }
+
+          initContext() {
+            if (!this.ctx) {
+              const AudioCtx = window.AudioContext || window.webkitAudioContext;
+              if (AudioCtx) {
+                this.ctx = new AudioCtx();
+              }
+            }
+            if (this.ctx && this.ctx.state === 'suspended') {
+              this.ctx.resume();
+            }
+          }
+
+          playNote(freq, duration = 2.6, volume = 0.042, type = 'sine') {
+            if (!this.ctx) return;
+            const now = this.ctx.currentTime;
+            const osc = this.ctx.createOscillator();
+            const harm = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, now);
+
+            harm.type = 'triangle';
+            harm.frequency.setValueAtTime(freq * 2, now);
+
+            gain.gain.setValueAtTime(0.0001, now);
+            gain.gain.exponentialRampToValueAtTime(volume, now + 0.09);
+            gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+            const harmGain = this.ctx.createGain();
+            harmGain.gain.setValueAtTime(volume * 0.15, now);
+            harmGain.gain.exponentialRampToValueAtTime(0.0001, now + duration * 0.65);
+
+            osc.connect(gain);
+            harm.connect(harmGain);
+            harmGain.connect(gain);
+            gain.connect(this.ctx.destination);
+
+            osc.start(now);
+            harm.start(now);
+            osc.stop(now + duration + 0.06);
+            harm.stop(now + duration + 0.06);
+          }
+
+          playUnlockHarmony() {
+            if (!this.isPlaying) return;
+            this.initContext();
+            if (!this.ctx) return;
+            const chord = [523.25, 659.25, 783.99, 987.77, 1046.5];
+            chord.forEach((f, idx) => {
+              setTimeout(() => {
+                if (this.isPlaying) this.playNote(f, 2.2, 0.028, 'sine');
+              }, idx * 85);
+            });
+          }
+
+          playSparkleChime() {
+            if (!this.ctx || !this.isPlaying) return;
+            const chimeNotes = [523.25, 659.25, 783.99, 987.77, 1046.5];
+            chimeNotes.forEach((f, idx) => {
+              setTimeout(() => {
+                if (this.isPlaying) this.playNote(f, 1.8, 0.024, 'sine');
+              }, idx * 75);
+            });
+          }
+
+          scheduleStep() {
+            if (!this.isPlaying || !this.ctx) return;
+            const chordIdx = Math.floor(this.stepIndex / 6) % this.sequence.length;
+            const subStep = this.stepIndex % 6;
+            const currentChord = this.sequence[chordIdx];
+
+            if (subStep === 0) {
+              this.playNote(currentChord.bass, 3.8, 0.048, 'sine');
+            }
+            const noteFreq = currentChord.notes[subStep % currentChord.notes.length];
+            this.playNote(noteFreq, 2.5, 0.032, 'sine');
+
+            this.stepIndex++;
+            this.timerId = setTimeout(() => this.scheduleStep(), 600);
+          }
+
+          toggle() {
+            this.initContext();
+            this.isPlaying = !this.isPlaying;
+            if (this.isPlaying) {
+              this.scheduleStep();
+            } else if (this.timerId) {
+              clearTimeout(this.timerId);
+              this.timerId = null;
+            }
+            return this.isPlaying;
+          }
+        }
+
+        // ============================================================================
+        // 4. SYSTEM 1: GALAXY & NEBULA SYSTEM (SUPPORTIVE DEEP COSMIC BACKDROP)
+        // ============================================================================
+        class GalaxyNebulaSystem {
+          constructor() {
+            this.clouds = [
+              {
+                rx: 0.22,
+                ry: 0.26,
+                radiusRatio: 0.55,
+                color: { r: 76, g: 29, b: 149 },
+                alpha: 0.16,
+                speed: 0.11,
+                phase: 0.4,
+              },
+              {
+                rx: 0.78,
+                ry: 0.25,
+                radiusRatio: 0.52,
+                color: { r: 23, g: 43, b: 115 },
+                alpha: 0.18,
+                speed: 0.09,
+                phase: 1.9,
+              },
+              {
+                rx: 0.48,
+                ry: 0.5,
+                radiusRatio: 0.58,
+                color: { r: 168, g: 32, b: 96 },
+                alpha: 0.11,
+                speed: 0.13,
+                phase: 3.1,
+              },
+              {
+                rx: 0.72,
+                ry: 0.72,
+                radiusRatio: 0.5,
+                color: { r: 126, g: 58, b: 212 },
+                alpha: 0.11,
+                speed: 0.1,
+                phase: 5.1,
+              },
+            ];
+
+            this.milkyWayNodes = [];
+            for (let i = 0; i < 8; i++) {
+              const t = i / 7;
+              this.milkyWayNodes.push({
+                t,
+                offsetPhase: i * 0.85,
+                sizeMult: 0.24 + Math.sin(t * Math.PI) * 0.15,
+                tint: i % 2 === 0 ? { r: 180, g: 130, b: 245 } : { r: 240, g: 120, b: 185 },
+              });
+            }
+          }
+
+          render(
+            ctx,
+            width,
+            height,
+            elapsed,
+            heartCenterX,
+            heartCenterY,
+            heartRadius,
+            pulseValue,
+            parallaxX,
+            parallaxY
+          ) {
+            const bgGrad = ctx.createLinearGradient(0, 0, width * 0.35, height);
+            bgGrad.addColorStop(0, '#02030a');
+            bgGrad.addColorStop(0.48, '#060a1c');
+            bgGrad.addColorStop(0.82, '#0a0518');
+            bgGrad.addColorStop(1, '#020208');
+            ctx.fillStyle = bgGrad;
+            ctx.fillRect(0, 0, width, height);
+
+            const maxDim = Math.max(width, height);
+
+            ctx.save();
+            ctx.globalCompositeOperation = 'screen';
+
+            for (let i = 0; i < this.clouds.length; i++) {
+              const c = this.clouds[i];
+              const driftX = Math.sin(elapsed * c.speed + c.phase) * width * 0.045;
+              const driftY = Math.cos(elapsed * c.speed * 0.85 + c.phase) * height * 0.04;
+              const cx = width * c.rx + driftX - parallaxX * 10;
+              const cy = height * c.ry + driftY - parallaxY * 10;
+              const rad = maxDim * c.radiusRatio;
+
+              const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, rad);
+              grad.addColorStop(0, `rgba(${c.color.r}, ${c.color.g}, ${c.color.b}, ${c.alpha})`);
+              grad.addColorStop(
+                0.52,
+                `rgba(${c.color.r}, ${c.color.g}, ${c.color.b}, ${c.alpha * 0.38})`
+              );
+              grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+              ctx.fillStyle = grad;
+              ctx.beginPath();
+              ctx.arc(cx, cy, rad, 0, TAU);
+              ctx.fill();
+            }
+
+            for (let i = 0; i < this.milkyWayNodes.length; i++) {
+              const node = this.milkyWayNodes[i];
+              const t = node.t;
+              const baseX = lerp(-width * 0.08, width * 1.08, t);
+              const baseY =
+                lerp(height * 0.84, height * 0.16, t) -
+                Math.sin(t * Math.PI) * height * 0.12 +
+                Math.sin(elapsed * 0.16 + node.offsetPhase) * 10;
+
+              const mx = baseX - parallaxX * 16;
+              const my = baseY - parallaxY * 16;
+              const mRad = maxDim * node.sizeMult;
+
+              const mwGrad = ctx.createRadialGradient(mx, my, 0, mx, my, mRad);
+              mwGrad.addColorStop(0, `rgba(${node.tint.r}, ${node.tint.g}, ${node.tint.b}, 0.068)`);
+              mwGrad.addColorStop(0.48, 'rgba(79, 92, 215, 0.028)');
+              mwGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+              ctx.fillStyle = mwGrad;
+              ctx.beginPath();
+              ctx.arc(mx, my, mRad, 0, TAU);
+              ctx.fill();
+            }
+
+            const auraRadius = heartRadius * (2.2 + pulseValue * 0.25);
+            const reflectionAlpha = 0.095 + pulseValue * 0.04;
+            const heartGlow = ctx.createRadialGradient(
+              heartCenterX,
+              heartCenterY,
+              heartRadius * 0.08,
+              heartCenterX,
+              heartCenterY,
+              auraRadius
+            );
+            heartGlow.addColorStop(0, `rgba(255, 51, 136, ${reflectionAlpha})`);
+            heartGlow.addColorStop(0.45, `rgba(219, 39, 119, ${reflectionAlpha * 0.48})`);
+            heartGlow.addColorStop(0.78, `rgba(139, 52, 222, ${reflectionAlpha * 0.18})`);
+            heartGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+            ctx.fillStyle = heartGlow;
+            ctx.beginPath();
+            ctx.arc(heartCenterX, heartCenterY, auraRadius, 0, TAU);
+            ctx.fill();
+
+            ctx.restore();
+          }
+        }
+
+        // ============================================================================
+        // 5. SYSTEM 2: MULTI-LAYER STARFIELD (3 DEPTH LAYERS, CLEAN & UNCLUTTERED)
+        // ============================================================================
+        class StarfieldSystem {
+          constructor(isMobile) {
+            this.isMobile = isMobile;
+            this.stars = [];
+            this.cosmicDust = [];
+            this.brightenBoost = 0;
+            this.unlockPullStrength = 0;
+          }
+
+          init(width, height) {
+            this.isMobile = width < 768;
+            this.stars = [];
+            this.cosmicDust = [];
+
+            const starCount = this.isMobile ? 165 : 290;
+            const colorOptions = [
+              { r: 248, g: 250, b: 252 },
+              { r: 255, g: 198, b: 228 },
+              { r: 216, g: 184, b: 254 },
+              { r: 186, g: 224, b: 253 },
+            ];
+
+            for (let i = 0; i < starCount; i++) {
+              const layerRoll = Math.random();
+              const layer = layerRoll < 0.58 ? 0 : layerRoll < 0.88 ? 1 : 2;
+
+              let x = Math.random() * width;
+              let y = Math.random() * height;
+              if (Math.random() < 0.38) {
+                const t = Math.random();
+                const bandX = lerp(0, width, t);
+                const bandY =
+                  lerp(height * 0.84, height * 0.16, t) - Math.sin(t * Math.PI) * height * 0.12;
+                const spread = (Math.random() - 0.5) * Math.min(width, height) * 0.32;
+                x = clamp(bandX + spread, 0, width);
+                y = clamp(bandY + spread, 0, height);
+              }
+
+              const c = colorOptions[Math.floor(Math.random() * colorOptions.length)];
+              const radius =
+                layer === 0
+                  ? randomRange(0.4, 0.85)
+                  : layer === 1
+                    ? randomRange(0.8, 1.35)
+                    : randomRange(1.3, 2.0);
+
+              this.stars.push({
+                x,
+                y,
+                layer,
+                radius,
+                color: c,
+                baseAlpha:
+                  layer === 0
+                    ? randomRange(0.2, 0.48)
+                    : layer === 1
+                      ? randomRange(0.38, 0.72)
+                      : randomRange(0.62, 0.92),
+                twinkleSpeed: randomRange(0.7, 2.4),
+                twinklePhase: Math.random() * TAU,
+                vx: (Math.random() - 0.5) * (0.45 + layer * 0.95),
+                vy: -randomRange(0.35, 1.6) * (0.4 + layer * 0.32),
+                hasCrossFlare: layer === 2 && Math.random() < 0.32,
+              });
+            }
+
+            const dustCount = this.isMobile ? 28 : 48;
+            for (let i = 0; i < dustCount; i++) {
+              this.cosmicDust.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                size: randomRange(2.8, 6.8),
+                spriteIdx: i % 2 === 0 ? 2 : 4,
+                alpha: randomRange(0.08, 0.2),
+                vx: (Math.random() - 0.5) * 4.2,
+                vy: -randomRange(1.5, 5.2),
+                phase: Math.random() * TAU,
+              });
+            }
+          }
+
+          triggerBrightenWave(strength = 1) {
+            this.brightenBoost = Math.max(this.brightenBoost, strength);
+          }
+
+          triggerUnlockConvergence(strength = 1) {
+            this.unlockPullStrength = Math.max(this.unlockPullStrength, strength);
+            this.triggerBrightenWave(0.95);
+          }
+
+          updateAndRender(
+            ctx,
+            width,
+            height,
+            dt,
+            elapsed,
+            parallaxX,
+            parallaxY,
+            heartCenterX,
+            heartCenterY,
+            heartRadius,
+            motionScale
+          ) {
+            const scaledDt = dt * motionScale;
+            this.brightenBoost = lerp(this.brightenBoost, 0, 1 - Math.exp(-1.6 * dt));
+            this.unlockPullStrength = lerp(this.unlockPullStrength, 0, 1 - Math.exp(-2.1 * dt));
+
+            ctx.save();
+            ctx.globalCompositeOperation = 'lighter';
+
+            for (let i = 0; i < this.stars.length; i++) {
+              const s = this.stars[i];
+              s.x += s.vx * scaledDt;
+              s.y += s.vy * scaledDt;
+
+              if (this.unlockPullStrength > 0.01) {
+                const dxCenter = heartCenterX - s.x;
+                const dyCenter = heartCenterY - s.y;
+                const pullFactor = (0.34 + s.layer * 0.2) * this.unlockPullStrength * dt;
+                s.x += dxCenter * pullFactor;
+                s.y += dyCenter * pullFactor;
+              }
+
+              if (s.x < -10) s.x = width + 10;
+              if (s.x > width + 10) s.x = -10;
+              if (s.y < -10) s.y = height + 10;
+              if (s.y > height + 10) s.y = -10;
+
+              const parallaxFactor = s.layer === 0 ? 5 : s.layer === 1 ? 12 : 20;
+              const drawX = s.x - parallaxX * parallaxFactor;
+              const drawY = s.y - parallaxY * parallaxFactor;
+
+              const distToHeart = Math.hypot(drawX - heartCenterX, drawY - heartCenterY);
+              const heartInfluence = clamp(1 - distToHeart / (heartRadius * 2.3), 0, 1);
+
+              const twinkle = 0.58 + 0.42 * Math.sin(elapsed * s.twinkleSpeed + s.twinklePhase);
+              const alpha = clamp(
+                s.baseAlpha * twinkle + this.brightenBoost * 0.26 + heartInfluence * 0.12,
+                0.06,
+                0.95
+              );
+
+              const r = Math.round(lerp(s.color.r, 255, heartInfluence * 0.45));
+              const g = Math.round(lerp(s.color.g, 145, heartInfluence * 0.3));
+              const b = Math.round(lerp(s.color.b, 205, heartInfluence * 0.4));
+
+              ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+              ctx.beginPath();
+              ctx.arc(drawX, drawY, s.radius, 0, TAU);
+              ctx.fill();
+
+              if (s.hasCrossFlare && alpha > 0.64) {
+                const flareLen = s.radius * (3.2 + this.brightenBoost * 1.8);
+                ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${alpha * 0.32})`;
+                ctx.lineWidth = 0.7;
+                ctx.beginPath();
+                ctx.moveTo(drawX - flareLen, drawY);
+                ctx.lineTo(drawX + flareLen, drawY);
+                ctx.moveTo(drawX, drawY - flareLen);
+                ctx.lineTo(drawX, drawY + flareLen);
+                ctx.stroke();
+              }
+            }
+
+            for (let i = 0; i < this.cosmicDust.length; i++) {
+              const d = this.cosmicDust[i];
+              d.x += (d.vx + Math.sin(elapsed * 0.55 + d.phase) * 2.5) * scaledDt;
+              d.y += d.vy * scaledDt;
+
+              if (d.x < -16) d.x = width + 16;
+              if (d.x > width + 16) d.x = -16;
+              if (d.y < -16) d.y = height + 16;
+              if (d.y > height + 16) d.y = -16;
+
+              const drawX = d.x - parallaxX * 14;
+              const drawY = d.y - parallaxY * 14;
+              const pulseAlpha = d.alpha * (0.68 + 0.32 * Math.sin(elapsed * 1.0 + d.phase));
+
+              ctx.globalAlpha = clamp(pulseAlpha + this.brightenBoost * 0.1, 0.04, 0.42);
+              ctx.drawImage(
+                spriteCache[d.spriteIdx],
+                drawX - d.size,
+                drawY - d.size,
+                d.size * 2,
+                d.size * 2
+              );
+            }
+
+            ctx.globalAlpha = 1;
+            ctx.restore();
+          }
+        }
+
+        // ============================================================================
+        // 6. SYSTEM 3: SHOOTING STAR SYSTEM (SLENDER DIAGONAL METEORS)
+        // ============================================================================
+        class ShootingStarSystem {
+          constructor() {
+            this.meteors = [];
+            this.cooldown = randomRange(3.2, 6.4);
+          }
+
+          spawnMeteor(width, height) {
+            if (this.meteors.length >= 2) return;
+            const startX = randomRange(width * 0.2, width * 0.92);
+            const startY = randomRange(height * 0.06, height * 0.34);
+            const angle = randomRange(Math.PI * 0.7, Math.PI * 0.81);
+            const speed = randomRange(500, 740);
+
+            this.meteors.push({
+              x: startX,
+              y: startY,
+              vx: Math.cos(angle) * speed,
+              vy: Math.sin(angle) * speed,
+              tailLength: randomRange(75, 130),
+              life: 0,
+              maxLife: randomRange(0.6, 0.95),
+              tint: Math.random() < 0.5 ? '255, 186, 224' : '224, 231, 255',
+            });
+          }
+
+          updateAndRender(ctx, width, height, dt, motionScale) {
+            if (motionScale < 0.2) return;
+            this.cooldown -= dt;
+            if (this.cooldown <= 0) {
+              this.spawnMeteor(width, height);
+              this.cooldown = randomRange(4.8, 9.2);
+            }
+
+            if (this.meteors.length === 0) return;
+
+            ctx.save();
+            ctx.globalCompositeOperation = 'lighter';
+
+            for (let i = this.meteors.length - 1; i >= 0; i--) {
+              const m = this.meteors[i];
+              m.life += dt;
+              if (m.life >= m.maxLife) {
+                this.meteors.splice(i, 1);
+                continue;
+              }
+
+              m.x += m.vx * dt;
+              m.y += m.vy * dt;
+
+              const progress = m.life / m.maxLife;
+              const alpha = Math.sin(progress * Math.PI);
+              const speedMag = Math.hypot(m.vx, m.vy) || 1;
+              const tailX = m.x - (m.vx / speedMag) * m.tailLength;
+              const tailY = m.y - (m.vy / speedMag) * m.tailLength;
+
+              const grad = ctx.createLinearGradient(m.x, m.y, tailX, tailY);
+              grad.addColorStop(0, `rgba(255, 255, 255, ${alpha * 0.9})`);
+              grad.addColorStop(0.28, `rgba(${m.tint}, ${alpha * 0.58})`);
+              grad.addColorStop(1, 'rgba(255, 133, 189, 0)');
+
+              ctx.strokeStyle = grad;
+              ctx.lineWidth = 1.35;
+              ctx.lineCap = 'round';
+              ctx.beginPath();
+              ctx.moveTo(m.x, m.y);
+              ctx.lineTo(tailX, tailY);
+              ctx.stroke();
+
+              ctx.fillStyle = `rgba(255, 255, 255, ${alpha * 0.95})`;
+              ctx.beginPath();
+              ctx.arc(m.x, m.y, 1.5, 0, TAU);
+              ctx.fill();
+            }
+
+            ctx.restore();
+          }
+        }
+
+        // ============================================================================
+        // 7. SYSTEM 4: PINK PARTICLE HEART SYSTEM & SEPARATION PHYSICS
+        // ============================================================================
+        const STAGE_LOCKED = 0;
+        const STAGE_NIGHT = 1;
+        const STAGE_FORMING = 2;
+        const STAGE_BEATING = 3;
+        const STAGE_OPENED = 4;
+
+        class ParticleHeartSystem {
+          constructor(isMobile) {
+            this.isMobile = isMobile;
+            this.heartParticles = [];
+            this.orbitSparks = [];
+            this.burstParticles = [];
+            this.shockwaves = [];
+            this.spiritNodes = [];
+          }
+
+          init(width, height) {
+            this.isMobile = width < 768;
+            const count = this.isMobile ? 1600 : 2600;
+            this.heartParticles = new Array(count);
+
+            for (let i = 0; i < count; i++) {
+              const t = Math.random() * TAU;
+              const pt = evaluateHeartPoint(t);
+
+              let radialScale = 1;
+              let role = 0;
+              const rRoll = Math.random();
+              if (rRoll < 0.58) {
+                radialScale = 1 - Math.pow(Math.random(), 2.8) * 0.13;
+                role = 0;
+              } else if (rRoll < 0.91) {
+                radialScale = 0.24 + Math.sqrt(Math.random()) * 0.74;
+                role = 1;
+              } else {
+                radialScale = 1.01 + Math.random() * 0.11;
+                role = 2;
+              }
+
+              const spawnAngle = Math.random() * TAU;
+              const spawnDist = Math.max(width, height) * (0.26 + Math.random() * 0.62);
+              const startX = width * 0.5 + Math.cos(spawnAngle) * spawnDist;
+              const startY = height * 0.5 + Math.sin(spawnAngle) * spawnDist;
+
+              let spriteIdx = 1;
+              const cRoll = Math.random();
+              if (cRoll < 0.3) spriteIdx = 0;
+              else if (cRoll < 0.66) spriteIdx = 1;
+              else if (cRoll < 0.88) spriteIdx = 2;
+              else if (cRoll < 0.96) spriteIdx = 3;
+              else spriteIdx = 4;
+
+              this.heartParticles[i] = {
+                x: startX,
+                y: startY,
+                originX: startX,
+                originY: startY,
+                vx: (Math.random() - 0.5) * 18,
+                vy: (Math.random() - 0.5) * 18,
+                hx: pt.x * radialScale,
+                hy: pt.y * radialScale,
+                hz: (Math.random() - 0.5) * 4.8,
+                role,
+                spriteIdx,
+                baseSize:
+                  role === 0
+                    ? randomRange(2.1, 4.1)
+                    : role === 1
+                      ? randomRange(1.6, 3.3)
+                      : randomRange(2.4, 4.6),
+                alpha:
+                  role === 0
+                    ? randomRange(0.46, 0.86)
+                    : role === 1
+                      ? randomRange(0.22, 0.52)
+                      : randomRange(0.32, 0.68),
+                twinkleSpeed: randomRange(1.5, 4.2),
+                twinklePhase: Math.random() * TAU,
+                delay: Math.random() * 0.34,
+                swirlSign: i % 2 === 0 ? 1 : -1,
+                swirlStrength: randomRange(40, 140),
+              };
+            }
+
+            const orbitCount = this.isMobile ? 34 : 58;
+            this.orbitSparks = [];
+            for (let i = 0; i < orbitCount; i++) {
+              this.orbitSparks.push({
+                angle: Math.random() * TAU,
+                angularSpeed: randomRange(0.2, 0.52) * (Math.random() < 0.5 ? 1 : -1),
+                radiusFactor: randomRange(0.96, 1.36),
+                tilt: randomRange(0.76, 1.12),
+                size: randomRange(2.6, 5.2),
+                spriteIdx: i % 3 === 0 ? 3 : 2,
+                phase: Math.random() * TAU,
+              });
+            }
+
+            this.initSpiritNodes(width, height);
+          }
+
+          snapshotParticleOrigins() {
+            for (let i = 0; i < this.heartParticles.length; i++) {
+              const p = this.heartParticles[i];
+              p.originX = p.x;
+              p.originY = p.y;
+            }
+          }
+
+          initSpiritNodes(width, height) {
+            const labels = [
+              { text: 'Cua ❤️', sub: 'My Little Universe', angle: -0.35, distMult: 1.28 },
+              { text: 'Thương Cua', sub: 'Forever & Always', angle: -2.79, distMult: 1.28 },
+              { text: 'Dịu dàng', sub: 'Ngàn vì sao sáng', angle: 0.42, distMult: 1.32 },
+              { text: 'Bên em', sub: 'Mỗi ngày ấm áp', angle: 2.72, distMult: 1.32 },
+            ];
+
+            this.spiritNodes = labels.map((item, idx) => ({
+              id: idx,
+              text: item.text,
+              sub: item.sub,
+              baseAngle: item.angle,
+              distMult: item.distMult,
+              x: width * 0.5 + Math.cos(item.angle) * 140,
+              y: height * 0.5 + Math.sin(item.angle) * 110,
+              vx: 0,
+              vy: 0,
+              tagOffsetX: 0,
+              tagOffsetY: -22,
+              phase: idx * 1.55,
+              radius: this.isMobile ? 48 : 62,
+            }));
+          }
+
+          spawnTouchPulse(x, y, particleCount = 55) {
+            this.shockwaves.push({
+              x,
+              y,
+              radius: 8,
+              maxRadius: Math.max(window.innerWidth, window.innerHeight) * 0.42,
+              alpha: 0.72,
+            });
+
+            for (let i = 0; i < particleCount; i++) {
+              const angle = Math.random() * TAU;
+              const speed = randomRange(40, 240);
+              this.burstParticles.push({
+                x,
+                y,
+                vx: Math.cos(angle) * speed,
+                vy: Math.sin(angle) * speed - randomRange(8, 38),
+                size: randomRange(3.2, 7.8),
+                spriteIdx: Math.floor(Math.random() * 4),
+                alpha: 0.9,
+                life: 0,
+                maxLife: randomRange(0.9, 1.75),
+              });
+            }
+          }
+
+          updateSpiritPhysics(
+            dt,
+            elapsed,
+            heartCenterX,
+            heartCenterY,
+            heartVisualRadius,
+            safeTopY,
+            safeBottomY
+          ) {
+            const count = this.spiritNodes.length;
+            const orbitRadius = heartVisualRadius * (this.isMobile ? 1.18 : 1.3);
+
+            for (let i = 0; i < count; i++) {
+              const node = this.spiritNodes[i];
+              const slowWave = Math.sin(elapsed * 0.42 + node.phase) * 0.1;
+              const angle = node.baseAngle + slowWave;
+
+              const anchorX = heartCenterX + Math.cos(angle) * orbitRadius;
+              const anchorY = heartCenterY + Math.sin(angle) * (orbitRadius * 0.72);
+
+              let fx = (anchorX - node.x) * 4.0;
+              let fy = (anchorY - node.y) * 4.0;
+
+              for (let j = 0; j < count; j++) {
+                if (i === j) continue;
+                const other = this.spiritNodes[j];
+                const dx = node.x - other.x;
+                const dy = node.y - other.y;
+                const dist = Math.hypot(dx, dy) || 0.001;
+                const minSep = node.radius + other.radius + (this.isMobile ? 20 : 32);
+
+                if (dist < minSep) {
+                  const push = ((minSep - dist) / minSep) * 260;
+                  fx += (dx / dist) * push;
+                  fy += (dy / dist) * push;
+                }
+              }
+
+              const dxHeart = node.x - heartCenterX;
+              const dyHeart = node.y - heartCenterY;
+              const distHeart = Math.hypot(dxHeart, dyHeart) || 0.001;
+              const minHeartClearance = heartVisualRadius * 1.05;
+
+              if (distHeart < minHeartClearance) {
+                const pushOut = ((minHeartClearance - distHeart) / minHeartClearance) * 320;
+                fx += (dxHeart / distHeart) * pushOut;
+                fy += (dyHeart / distHeart) * pushOut;
+              }
+
+              node.vx = (node.vx + fx * dt) * Math.pow(0.84, dt * 60);
+              node.vy = (node.vy + fy * dt) * Math.pow(0.84, dt * 60);
+              node.x += node.vx * dt;
+              node.y += node.vy * dt;
+
+              const marginX = this.isMobile ? 56 : 84;
+              node.x = clamp(node.x, marginX, window.innerWidth - marginX);
+              node.y = clamp(node.y, safeTopY + 28, Math.max(safeTopY + 40, safeBottomY - 28));
+
+              const desiredTagY = node.y < heartCenterY ? -22 : 22;
+              node.tagOffsetY = lerp(node.tagOffsetY, desiredTagY, 1 - Math.exp(-6 * dt));
+            }
+          }
+
+          renderSpiritNodes(ctx, elapsed, stage) {
+            if (stage < STAGE_FORMING) return;
+            let visibility = stage === STAGE_FORMING ? 0.42 : 0.85;
+            if (stage === STAGE_OPENED && this.isMobile) {
+              visibility = 0.28;
+            }
+
+            ctx.save();
+            for (let i = 0; i < this.spiritNodes.length; i++) {
+              if (stage === STAGE_OPENED && this.isMobile && i >= 2) continue;
+
+              const node = this.spiritNodes[i];
+              const pulse = 1 + 0.14 * Math.sin(elapsed * 2.4 + node.phase);
+
+              ctx.save();
+              ctx.globalCompositeOperation = 'lighter';
+              const orbRadius = 9 * pulse;
+              ctx.globalAlpha = visibility;
+              ctx.drawImage(
+                spriteCache[1],
+                node.x - orbRadius,
+                node.y - orbRadius,
+                orbRadius * 2,
+                orbRadius * 2
+              );
+              ctx.restore();
+
+              const tagX = node.x + node.tagOffsetX;
+              const tagY = node.y + node.tagOffsetY;
+
+              ctx.font = '600 10.5px "Plus Jakarta Sans", sans-serif';
+              const titleWidth = ctx.measureText(node.text).width;
+              ctx.font = '400 8.5px "JetBrains Mono", monospace';
+              const subWidth = ctx.measureText(node.sub).width;
+
+              const boxW = Math.max(titleWidth, subWidth) + 18;
+              const boxH = 30;
+              const boxX = tagX - boxW * 0.5;
+              const boxY = tagY - boxH * 0.5;
+
+              ctx.strokeStyle = `rgba(255, 148, 198, ${0.2 * visibility})`;
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(node.x, node.y);
+              ctx.lineTo(tagX, tagY);
+              ctx.stroke();
+
+              ctx.fillStyle = `rgba(11, 16, 34, ${0.72 * visibility})`;
+              ctx.strokeStyle = `rgba(255, 255, 255, ${0.11 * visibility})`;
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              if (ctx.roundRect) {
+                ctx.roundRect(boxX, boxY, boxW, boxH, 8);
+              } else {
+                ctx.rect(boxX, boxY, boxW, boxH);
+              }
+              ctx.fill();
+              ctx.stroke();
+
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+              ctx.font = '600 10.5px "Plus Jakarta Sans", sans-serif';
+              ctx.fillStyle = `rgba(255, 240, 248, ${0.94 * visibility})`;
+              ctx.fillText(node.text, tagX, boxY + 10.5);
+
+              ctx.font = '400 8.5px "JetBrains Mono", monospace';
+              ctx.fillStyle = `rgba(255, 174, 214, ${0.75 * visibility})`;
+              ctx.fillText(node.sub, tagX, boxY + 22);
+            }
+            ctx.restore();
+          }
+
+          updateAndRender(
+            ctx,
+            width,
+            height,
+            dt,
+            elapsed,
+            stage,
+            stageTime,
+            heartCenterX,
+            heartCenterY,
+            heartScale,
+            pulseScale,
+            beatWave,
+            pointer,
+            safeTopY,
+            safeBottomY,
+            motionScale
+          ) {
+            ctx.save();
+            ctx.globalCompositeOperation = 'lighter';
+
+            const swayAngle = Math.sin(elapsed * 0.6 * motionScale) * 0.2;
+            const cosSway = Math.cos(swayAngle);
+            const sinSway = Math.sin(swayAngle);
+            const formDuration = 3.4;
+
+            for (let i = 0; i < this.heartParticles.length; i++) {
+              const p = this.heartParticles[i];
+
+              const rotX = p.hx * cosSway - p.hz * sinSway;
+              const rotZ = p.hx * sinSway + p.hz * cosSway;
+              const depthFactor = 1 + rotZ * 0.02;
+
+              const destX = heartCenterX + rotX * heartScale * pulseScale * depthFactor;
+              const destY = heartCenterY + p.hy * heartScale * pulseScale * depthFactor;
+
+              if (stage === STAGE_LOCKED || stage === STAGE_NIGHT) {
+                p.x += p.vx * dt * motionScale;
+                p.y += p.vy * dt * motionScale;
+                p.originX = p.x;
+                p.originY = p.y;
+
+                if (p.x < 0) p.x += width;
+                if (p.x > width) p.x -= width;
+                if (p.y < 0) p.y += height;
+                if (p.y > height) p.y -= height;
+              } else if (stage === STAGE_FORMING) {
+                const localT = clamp((stageTime - p.delay) / (formDuration - p.delay), 0, 1);
+                const eased = easeInOutCubic(localT);
+                const swirlEnvelope = Math.sin(localT * Math.PI) * (1 - localT);
+                const swirlAngle = (1 - localT) * 2.4 * p.swirlSign + p.twinklePhase * 0.2;
+
+                const swirlOffsetX = Math.cos(swirlAngle) * p.swirlStrength * swirlEnvelope;
+                const swirlOffsetY = Math.sin(swirlAngle) * p.swirlStrength * swirlEnvelope;
+
+                p.x = lerp(p.originX, destX, eased) + swirlOffsetX;
+                p.y = lerp(p.originY, destY, eased) + swirlOffsetY;
+              } else {
+                const microOrbit = (1.5 + p.role * 1.1) * motionScale;
+                const waveX = Math.cos(elapsed * 1.75 + p.twinklePhase) * microOrbit;
+                const waveY = Math.sin(elapsed * 1.45 + p.twinklePhase) * microOrbit;
+
+                let targetX = destX + waveX;
+                let targetY = destY + waveY;
+
+                if (pointer.active) {
+                  const dx = p.x - pointer.x;
+                  const dy = p.y - pointer.y;
+                  const distSq = dx * dx + dy * dy;
+                  const influenceRadius = 84;
+                  if (distSq < influenceRadius * influenceRadius && distSq > 1) {
+                    const dist = Math.sqrt(distSq);
+                    const push = (1 - dist / influenceRadius) * 20;
+                    targetX += (dx / dist) * push;
+                    targetY += (dy / dist) * push;
+                  }
+                }
+
+                const followFactor = 1 - Math.exp(-8.8 * dt);
+                p.x = lerp(p.x, targetX, followFactor);
+                p.y = lerp(p.y, targetY, followFactor);
+              }
+
+              const twinkle = 0.65 + 0.35 * Math.sin(elapsed * p.twinkleSpeed + p.twinklePhase);
+              const stageVisibility =
+                stage === STAGE_LOCKED
+                  ? i % 5 === 0
+                    ? 0.38
+                    : 0.05
+                  : stage === STAGE_NIGHT
+                    ? i % 4 === 0
+                      ? 0.5
+                      : 0.1
+                    : 1;
+
+              const finalAlpha = clamp(
+                p.alpha * twinkle * stageVisibility * (1 + Math.max(0, beatWave) * 0.18),
+                0.04,
+                0.92
+              );
+              const size = p.baseSize * (0.88 + 0.24 * twinkle) * depthFactor;
+
+              ctx.globalAlpha = finalAlpha;
+              ctx.drawImage(
+                spriteCache[p.spriteIdx],
+                p.x - size,
+                p.y - size,
+                size * 2,
+                size * 2
+              );
+            }
+
+            if (stage >= STAGE_FORMING) {
+              const heartVisualRadius = heartScale * 16.0;
+              const orbitAlphaScale = stage === STAGE_FORMING ? clamp(stageTime / 3, 0, 1) : 1;
+
+              for (let i = 0; i < this.orbitSparks.length; i++) {
+                const sp = this.orbitSparks[i];
+                sp.angle += sp.angularSpeed * dt * motionScale;
+
+                const rx = Math.cos(sp.angle) * heartVisualRadius * sp.radiusFactor;
+                const ry = Math.sin(sp.angle) * heartVisualRadius * sp.radiusFactor * sp.tilt;
+
+                const sx = heartCenterX + rx;
+                const sy = heartCenterY + ry;
+                const twinkle = 0.5 + 0.5 * Math.sin(elapsed * 3.0 + sp.phase);
+
+                ctx.globalAlpha = twinkle * 0.68 * orbitAlphaScale;
+                ctx.drawImage(
+                  spriteCache[sp.spriteIdx],
+                  sx - sp.size,
+                  sy - sp.size,
+                  sp.size * 2,
+                  sp.size * 2
+                );
+              }
+            }
+
+            for (let i = this.shockwaves.length - 1; i >= 0; i--) {
+              const sw = this.shockwaves[i];
+              sw.radius = lerp(sw.radius, sw.maxRadius, 1 - Math.exp(-3.4 * dt));
+              sw.alpha = lerp(sw.alpha, 0, 1 - Math.exp(-3.9 * dt));
+
+              if (sw.alpha <= 0.02) {
+                this.shockwaves.splice(i, 1);
+                continue;
+              }
+
+              ctx.strokeStyle = `rgba(255, 158, 208, ${sw.alpha * 0.45})`;
+              ctx.lineWidth = 1.6;
+              ctx.beginPath();
+              ctx.arc(sw.x, sw.y, sw.radius, 0, TAU);
+              ctx.stroke();
+            }
+
+            for (let i = this.burstParticles.length - 1; i >= 0; i--) {
+              const bp = this.burstParticles[i];
+              bp.life += dt;
+              if (bp.life >= bp.maxLife) {
+                this.burstParticles.splice(i, 1);
+                continue;
+              }
+
+              bp.vx *= Math.pow(0.95, dt * 60);
+              bp.vy *= Math.pow(0.95, dt * 60);
+              bp.vy += 14 * dt;
+              bp.x += bp.vx * dt;
+              bp.y += bp.vy * dt;
+
+              const lifeRatio = 1 - bp.life / bp.maxLife;
+              ctx.globalAlpha = lifeRatio * 0.86;
+              const s = bp.size * (0.5 + 0.5 * lifeRatio);
+              ctx.drawImage(
+                spriteCache[bp.spriteIdx],
+                bp.x - s,
+                bp.y - s,
+                s * 2,
+                s * 2
+              );
+            }
+
+            ctx.globalAlpha = 1;
+            ctx.restore();
+
+            const heartVisualRadius = heartScale * 16.0;
+            this.updateSpiritPhysics(
+              dt,
+              elapsed,
+              heartCenterX,
+              heartCenterY,
+              heartVisualRadius,
+              safeTopY,
+              safeBottomY
+            );
+            this.renderSpiritNodes(ctx, elapsed, stage);
+          }
+        }
+
+        // ============================================================================
+        // 8. MAIN SCENE CONTROLLER, VIEWPORT-SAFE HEART MATH & PASSWORD GATE
+        // ============================================================================
+        const canvas = document.getElementById('heart-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d', { alpha: false });
+
+        const passwordGateOverlay = document.getElementById('password-gate-overlay');
+        const passwordGateCard = document.getElementById('password-gate-card');
+        const passwordGateForm = document.getElementById('password-gate-form');
+        const secretPasswordInput = document.getElementById('secret-password-input');
+        const gateErrorText = document.getElementById('gate-error-text');
+
+        const stagePromptEl = document.getElementById('stage-prompt');
+        const openHeartBtn = document.getElementById('open-heart-btn');
+        const loveCardModal = document.getElementById('love-card-modal');
+        const closeCardBtn = document.getElementById('close-card-btn');
+        const burstLoveBtn = document.getElementById('burst-love-btn');
+        const audioToggleBtn = document.getElementById('audio-toggle-btn');
+        const audioLabel = document.getElementById('audio-label');
+
+        const SECRET_CODE = 'emyeuanh';
+        let isGateUnlocked = false;
+
+        const reducedMotionQuery = window.matchMedia
+          ? window.matchMedia('(prefers-reduced-motion: reduce)')
+          : { matches: false };
+
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+        let dpr = Math.min(window.devicePixelRatio || 1, 2);
+        let isMobile = width < 768;
+
+        let currentStage = STAGE_LOCKED;
+        let stageElapsed = 0;
+        let totalElapsed = 0;
+        let lastTimestamp = performance.now();
+
+        let heartCenterX = width * 0.5;
+        let heartCenterY = height * 0.46;
+        let targetHeartCenterX = width * 0.5;
+        let targetHeartCenterY = height * 0.46;
+        let baseHeartScale = 9;
+        let targetHeartScale = 9;
+        let currentSafeTopY = 68;
+        let currentSafeBottomY = height - 80;
+
+        const pointer = {
+          x: width * 0.5,
+          y: height * 0.5,
+          normX: 0,
+          normY: 0,
+          smoothX: 0,
+          smoothY: 0,
+          active: false,
+        };
+
+        const pianoEngine = new RomanticPianoEngine();
+        const galaxySystem = new GalaxyNebulaSystem();
+        const starfieldSystem = new StarfieldSystem(isMobile);
+        const shootingStarSystem = new ShootingStarSystem();
+        const particleHeartSystem = new ParticleHeartSystem(isMobile);
+
+        function updateHeartLayoutTargets(instant = false) {
+          isMobile = width < 768;
+          const hudBottom = 64;
+
+          if (currentStage === STAGE_OPENED) {
+            if (isMobile) {
+              let cardTop = height * 0.47;
+              if (loveCardModal && loveCardModal.classList.contains('is-open')) {
+                const rect = loveCardModal.getBoundingClientRect();
+                if (rect.height > 40 && rect.top > hudBottom + 80) {
+                  cardTop = rect.top;
+                }
+              }
+
+              const safeTop = hudBottom + 14;
+              const safeBottom = Math.max(safeTop + 110, cardTop - 18);
+              const availH = safeBottom - safeTop;
+              const availW = width - 36;
+
+              targetHeartScale = clamp(
+                Math.min(availH / 35.5, availW / 37.0),
+                4.2,
+                8.6
+              );
+              targetHeartCenterX = width * 0.5;
+              targetHeartCenterY =
+                (safeTop + safeBottom) * 0.5 - 2.85 * targetHeartScale;
+
+              currentSafeTopY = safeTop;
+              currentSafeBottomY = safeBottom;
+            } else {
+              const safeTop = hudBottom + 28;
+              const safeBottom = height - 48;
+              const availH = Math.max(240, safeBottom - safeTop);
+              const leftZoneWidth = width * 0.48;
+
+              targetHeartScale = clamp(
+                Math.min(availH / 36.5, leftZoneWidth / 37.5),
+                8.8,
+                14.6
+              );
+              targetHeartCenterX = width * 0.285;
+              targetHeartCenterY =
+                (safeTop + safeBottom) * 0.5 - 2.85 * targetHeartScale;
+
+              currentSafeTopY = safeTop;
+              currentSafeBottomY = safeBottom;
+            }
+          } else {
+            const safeTop = hudBottom + 22;
+            const safeBottom = isMobile ? height - 118 : height - 110;
+            const availH = Math.max(180, safeBottom - safeTop);
+            const availW = width - (isMobile ? 40 : 120);
+
+            targetHeartScale = clamp(
+              Math.min(availH / 36.5, availW / 38.0),
+              isMobile ? 6.0 : 9.6,
+              isMobile ? 10.4 : 15.6
+            );
+            targetHeartCenterX = width * 0.5;
+            targetHeartCenterY =
+              (safeTop + safeBottom) * 0.5 - 2.85 * targetHeartScale;
+
+            currentSafeTopY = safeTop;
+            currentSafeBottomY = safeBottom;
+          }
+
+          if (instant) {
+            heartCenterX = targetHeartCenterX;
+            heartCenterY = targetHeartCenterY;
+            baseHeartScale = targetHeartScale;
+          }
+        }
+
+        function handleResize() {
+          width = window.innerWidth;
+          height = window.innerHeight;
+          dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+          canvas.width = Math.floor(width * dpr);
+          canvas.height = Math.floor(height * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+          if (starfieldSystem.stars.length === 0) {
+            starfieldSystem.init(width, height);
+          }
+          updateHeartLayoutTargets(true);
+        }
+
+        function triggerPasswordError() {
+          if (gateErrorText) {
+            gateErrorText.textContent =
+              'Mật mã chưa đúng rồi Cua ơi... thử nói điều ngược lại xem nhé 💗';
+            gateErrorText.classList.add('is-visible');
+          }
+          if (secretPasswordInput) {
+            secretPasswordInput.classList.add('is-invalid');
+          }
+          if (passwordGateCard) {
+            passwordGateCard.classList.remove('is-error-shake');
+            void passwordGateCard.offsetWidth;
+            passwordGateCard.classList.add('is-error-shake');
+          }
+        }
+
+        function unlockCosmicGate() {
+          if (isGateUnlocked) return;
+          isGateUnlocked = true;
+
+          if (gateErrorText) {
+            gateErrorText.textContent = '';
+            gateErrorText.classList.remove('is-visible');
+          }
+          if (secretPasswordInput) {
+            secretPasswordInput.classList.remove('is-invalid');
+            secretPasswordInput.blur();
+          }
+
+          if (passwordGateCard) {
+            passwordGateCard.classList.remove('is-error-shake');
+            passwordGateCard.classList.add('is-glow-success');
+          }
+
+          pianoEngine.playUnlockHarmony();
+          starfieldSystem.triggerUnlockConvergence(1.2);
+          shootingStarSystem.spawnMeteor(width, height);
+          particleHeartSystem.spawnTouchPulse(width * 0.5, height * 0.45, 75);
+
+          setTimeout(() => {
+            if (passwordGateOverlay) {
+              passwordGateOverlay.classList.add('is-unlocking');
+            }
+            particleHeartSystem.snapshotParticleOrigins();
+            currentStage = STAGE_FORMING;
+            stageElapsed = 0;
+            updateHeartLayoutTargets(false);
+          }, 240);
+
+          setTimeout(() => {
+            if (passwordGateOverlay) {
+              passwordGateOverlay.classList.add('is-hidden');
+              passwordGateOverlay.setAttribute('aria-hidden', 'true');
+            }
+          }, 1350);
+        }
+
+        if (passwordGateForm) {
+          passwordGateForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (isGateUnlocked) return;
+
+            const rawValue = secretPasswordInput ? secretPasswordInput.value : '';
+            const normalized = rawValue.trim().toLowerCase();
+
+            if (normalized === SECRET_CODE) {
+              unlockCosmicGate();
+            } else {
+              triggerPasswordError();
+            }
+          });
+        }
+
+        if (secretPasswordInput) {
+          secretPasswordInput.addEventListener('input', () => {
+            if (secretPasswordInput.classList.contains('is-invalid')) {
+              secretPasswordInput.classList.remove('is-invalid');
+            }
+          });
+        }
+
+        function openLoveCard() {
+          if (!isGateUnlocked || currentStage < STAGE_FORMING) return;
+          if (currentStage !== STAGE_OPENED) {
+            currentStage = STAGE_OPENED;
+            stageElapsed = 0;
+          }
+
+          if (stagePromptEl) {
+            stagePromptEl.classList.remove('is-visible');
+            stagePromptEl.classList.add('is-hidden');
+          }
+
+          if (loveCardModal) {
+            loveCardModal.classList.add('is-open');
+            loveCardModal.setAttribute('aria-hidden', 'false');
+          }
+
+          requestAnimationFrame(() => {
+            updateHeartLayoutTargets(false);
+          });
+
+          particleHeartSystem.spawnTouchPulse(heartCenterX, heartCenterY, 70);
+          starfieldSystem.triggerBrightenWave(0.9);
+          shootingStarSystem.spawnMeteor(width, height);
+          pianoEngine.playSparkleChime();
+        }
+
+        function closeLoveCard() {
+          if (currentStage === STAGE_OPENED) {
+            currentStage = STAGE_BEATING;
+            stageElapsed = 0;
+            updateHeartLayoutTargets(false);
+          }
+
+          if (loveCardModal) {
+            loveCardModal.classList.remove('is-open');
+            loveCardModal.setAttribute('aria-hidden', 'true');
+          }
+
+          if (stagePromptEl) {
+            stagePromptEl.classList.remove('is-hidden');
+            stagePromptEl.classList.add('is-visible');
+          }
+
+          particleHeartSystem.spawnTouchPulse(targetHeartCenterX, targetHeartCenterY, 40);
+        }
+
+        function renderUniverse(now) {
+          const dt = clamp((now - lastTimestamp) / 1000, 0.001, 0.05);
+          lastTimestamp = now;
+
+          const motionScale = reducedMotionQuery.matches ? 0.35 : 1.0;
+          totalElapsed += dt;
+          stageElapsed += dt;
+
+          if (currentStage === STAGE_NIGHT && stageElapsed >= 1.0) {
+            particleHeartSystem.snapshotParticleOrigins();
+            currentStage = STAGE_FORMING;
+            stageElapsed = 0;
+          } else if (currentStage === STAGE_FORMING && stageElapsed >= 3.5) {
+            currentStage = STAGE_BEATING;
+            stageElapsed = 0;
+            if (stagePromptEl) {
+              stagePromptEl.classList.add('is-visible');
+            }
+          }
+
+          const layoutLerp = 1 - Math.exp(-4.6 * dt);
+          heartCenterX = lerp(heartCenterX, targetHeartCenterX, layoutLerp);
+          heartCenterY = lerp(heartCenterY, targetHeartCenterY, layoutLerp);
+          baseHeartScale = lerp(baseHeartScale, targetHeartScale, layoutLerp);
+
+          const parallaxLerp = 1 - Math.exp(-3.5 * dt);
+          pointer.smoothX = lerp(
+            pointer.smoothX,
+            isMobile ? 0 : pointer.normX * motionScale,
+            parallaxLerp
+          );
+          pointer.smoothY = lerp(
+            pointer.smoothY,
+            isMobile ? 0 : pointer.normY * motionScale,
+            parallaxLerp
+          );
+
+          const beatWave =
+            (Math.pow(Math.sin(totalElapsed * 2.4), 6) * 0.058 +
+              Math.sin(totalElapsed * 4.8 - 0.45) * 0.018) *
+            motionScale;
+          const pulseScale =
+            currentStage >= STAGE_BEATING
+              ? 1 + beatWave
+              : 1 + Math.sin(totalElapsed * 1.5) * 0.012 * motionScale;
+
+          const heartVisualRadius = baseHeartScale * 16.0;
+
+          galaxySystem.render(
+            ctx,
+            width,
+            height,
+            totalElapsed * motionScale,
+            heartCenterX,
+            heartCenterY,
+            heartVisualRadius,
+            Math.max(0, beatWave * 10),
+            pointer.smoothX,
+            pointer.smoothY
+          );
+
+          starfieldSystem.updateAndRender(
+            ctx,
+            width,
+            height,
+            dt,
+            totalElapsed,
+            pointer.smoothX,
+            pointer.smoothY,
+            heartCenterX,
+            heartCenterY,
+            heartVisualRadius,
+            motionScale
+          );
+
+          shootingStarSystem.updateAndRender(ctx, width, height, dt, motionScale);
+
+          particleHeartSystem.updateAndRender(
+            ctx,
+            width,
+            height,
+            dt,
+            totalElapsed,
+            currentStage,
+            stageElapsed,
+            heartCenterX,
+            heartCenterY,
+            baseHeartScale,
+            pulseScale,
+            beatWave,
+            pointer,
+            currentSafeTopY,
+            currentSafeBottomY,
+            motionScale
+          );
+
+          requestAnimationFrame(renderUniverse);
+        }
+
+        canvas.addEventListener('pointerdown', (e) => {
+          pointer.x = e.clientX;
+          pointer.y = e.clientY;
+          pointer.active = true;
+
+          if (!isGateUnlocked) return;
+
+          particleHeartSystem.spawnTouchPulse(e.clientX, e.clientY, 42);
+          starfieldSystem.triggerBrightenWave(0.55);
+          pianoEngine.playSparkleChime();
+
+          const distToHeart = Math.hypot(
+            e.clientX - heartCenterX,
+            e.clientY - heartCenterY
+          );
+          const hitRadius = baseHeartScale * 18.5;
+
+          if (currentStage === STAGE_BEATING && distToHeart <= hitRadius) {
+            openLoveCard();
+          } else if (
+            currentStage === STAGE_FORMING &&
+            stageElapsed > 1.6 &&
+            distToHeart <= hitRadius
+          ) {
+            openLoveCard();
+          }
+        });
+
+        window.addEventListener('pointermove', (e) => {
+          pointer.x = e.clientX;
+          pointer.y = e.clientY;
+          pointer.normX = (e.clientX / Math.max(1, width) - 0.5) * 2;
+          pointer.normY = (e.clientY / Math.max(1, height) - 0.5) * 2;
+          pointer.active = true;
+        });
+
+        window.addEventListener('pointerup', () => {
+          pointer.active = false;
+        });
+
+        if (openHeartBtn) {
+          openHeartBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openLoveCard();
+          });
+        }
+
+        if (closeCardBtn) {
+          closeCardBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeLoveCard();
+          });
+        }
+
+        if (burstLoveBtn) {
+          burstLoveBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            particleHeartSystem.spawnTouchPulse(heartCenterX, heartCenterY, 80);
+            starfieldSystem.triggerBrightenWave(1.0);
+            shootingStarSystem.spawnMeteor(width, height);
+            pianoEngine.playSparkleChime();
+          });
+        }
+
+        if (audioToggleBtn) {
+          audioToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const playing = pianoEngine.toggle();
+            audioToggleBtn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+            if (audioLabel) {
+              audioLabel.textContent = playing
+                ? 'Nhạc Piano: Bật'
+                : 'Nhạc Piano: Tắt';
+            }
+          });
+        }
+
+        window.addEventListener('resize', handleResize, { passive: true });
+        window.addEventListener('orientationchange', () => {
+          setTimeout(handleResize, 120);
+        });
+
+        handleResize();
+        updateHeartLayoutTargets(true);
+        particleHeartSystem.init(width, height);
+        requestAnimationFrame(renderUniverse);
+      })();
+    </script>
+  </body>
+</html>
